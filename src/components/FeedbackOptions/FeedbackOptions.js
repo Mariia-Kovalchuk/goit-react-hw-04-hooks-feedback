@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
+import style from './FeedbackOptions.module.css'
 
 
 
 const FeedbackOptions = ({options, onLeaveFeedback}) =>
-  <div>
+  <div className={style.optionsContainer}>
     {options.map(option =>
-      <button type="button" key={v4() } onClick={()=>onLeaveFeedback(option)}>{ option}</button>
+      <button type="button" key={v4() } onClick={()=>onLeaveFeedback(option)} className={style.button}>{ option}</button>
       )}
   </div>
 
